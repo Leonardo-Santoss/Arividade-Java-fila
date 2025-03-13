@@ -1,0 +1,47 @@
+package com.mycompany.atendimento;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+
+public class Atendimento {
+int escolha;
+
+    public int getEscolha() {
+        return escolha;
+    }
+
+    public void setEscolha(int escolha) {
+        this.escolha = escolha;
+    }
+
+
+    
+    public static void main(String[] args) {
+       
+        Queue<String> pessoa = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        Atendimento escolha = new Atendimento();
+        int i = 0;
+        while(i == 0){
+        System.out.println("Voce deseja: \n(1) Adicionar pessoas a fila. \n(2) Atender pessoa da fila. \n(3) Exibir fila atual. ");
+        escolha.setEscolha(scanner.nextInt());
+        scanner.nextLine();
+        
+        if(escolha.escolha == 1){
+            System.out.println("Qual o nome da pessoa que voce quer adicionar");
+            pessoa.add(scanner.nextLine());
+        }else if(escolha.escolha == 2){
+            System.out.println("Foi atendido" + pessoa.poll());
+        }else if(escolha.escolha == 3){
+            System.out.println("A fila atual tem: " + pessoa);
+            return;
+        }else{
+            System.out.println("Escolha invalida");
+        }
+        }
+        
+        
+    }
+}
