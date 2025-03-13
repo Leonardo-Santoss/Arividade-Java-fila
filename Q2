@@ -1,0 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.impressora;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+
+public class Impressora {
+int escolha;
+
+    public int getEscolha() {
+        return escolha;
+    }
+
+    public void setEscolha(int escolha) {
+        this.escolha = escolha;
+    }
+
+
+    
+    public static void main(String[] args) {
+       
+        Queue<String> pessoa = new LinkedList<>();
+        Scanner scanner = new Scanner(System.in);
+        Impressora escolha = new Impressora();
+        int i = 0;
+        while(i == 0){
+        System.out.println("Voce deseja: \n(1) Adicionar documento. \n(2) Imprimir primeiro documento da fila. \n(3) Mostrar documentos restantes. \n(0) Para sair. ");
+        escolha.setEscolha(scanner.nextInt());
+        scanner.nextLine();
+        
+        if(escolha.escolha == 1){
+            System.out.println("Qual o nome do documento");
+            pessoa.add(scanner.nextLine());
+        }else if(escolha.escolha == 2){
+            System.out.println("O documento " + pessoa.poll() + " foi impresso.");
+        }else if(escolha.escolha == 3){
+            System.out.println("Documentos restantes " + pessoa);
+        }else if(escolha.escolha == 0){
+            return;
+        }else{
+            System.out.println("Escolha invalida");
+        }
+        }
+        
+        
+    }
+}
