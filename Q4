@@ -1,0 +1,40 @@
+
+
+package com.mycompany.inverterpalavras;
+import java.util.Scanner;
+import java.util.Stack;
+public class InverterPalavras {
+   String palavra;
+
+    public String getPalavra() {
+        return palavra;
+    }
+
+    public void setPalavra(String palavra) {
+        this.palavra = palavra;
+    }
+
+    public void inverter(){
+        Stack<Character> letras = new Stack();
+        for(int i = 0; i < palavra.length(); i++){
+            letras.push(palavra.charAt(i));
+        }
+        for(int i = palavra.length(); i > 0 ; i--){
+           System.out.print(letras.pop());
+        }
+        
+        
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        InverterPalavras palavra = new InverterPalavras();
+       
+        System.out.println("Digite uma palavra:");
+        palavra.setPalavra(scanner.nextLine());
+        
+        palavra.inverter();
+        
+        
+    }
+}
